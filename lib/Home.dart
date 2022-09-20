@@ -1,35 +1,60 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
-class Home_page extends StatelessWidget {
-  const Home_page({Key? key}) : super(key: key);
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: HomePage(),
+  ));
+}
 
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
-        title: Text('Homepage'),
+        title: const Text("My Home List"),
       ),
-      body: SafeArea(
-          child: ListView.separated(
-              itemBuilder: (context, index) {
-                return Card(
-                  child: ListTile(
-                    title: Text(
-                      'Shanil',
-                      style: TextStyle(color: Colors.black, fontSize: 23),
-                    ),
-                    subtitle: Text('Good morning',style: TextStyle(color: Colors.grey,fontSize: 13),),
-                    leading: CircleAvatar(backgroundImage: NetworkImage('https://www.filmibeat.com/img/popcorn/profile_photos/mammootty-20150909105845-2447.jpg'),),
-                    trailing: Text('1${index}:00P'),),
-                );
-              },
-              separatorBuilder: (context, index) {
-                return Divider();
-              },
-              itemCount: 10)),
+      body: ListView(
+        children: [
+          Card(
+            color: Colors.orange,
+            child: ListTile(
+                leading: const CircleAvatar(
+                    backgroundImage: AssetImage("assets/images/businesses.png")),
+                title: const Text("Business"),
+                trailing: Wrap(
+                  spacing: 30,
+                  children: const [Icon(Icons.message), Icon(Icons.phone)],
+                ),
+                onTap: () {
+                  Fluttertoast.showToast(
+                    msg: "Hello", // message
+                    toastLength: Toast.LENGTH_SHORT, // length
+                    gravity: ToastGravity.BOTTOM, // location
+                  );
+                }),
+          ),
+
+
+
+          const ListTile(
+            leading: Icon(Icons.search),
+            title: Text("Search"),
+            trailing: Icon(Icons.arrow_circle_right_outlined),
+          ),
+          ListTile(
+            leading: Icon(Icons.search),
+            title: Text("Search"),
+            trailing: Icon(Icons.arrow_circle_right_outlined),
+          ),
+          ListTile(
+            leading: Icon(Icons.search),
+            title: Text("Search"),
+            trailing: Icon(Icons.arrow_circle_right_outlined),
+          ),
+        ],
+      ),
     );
   }
 }
