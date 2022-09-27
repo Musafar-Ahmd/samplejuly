@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'LoginForm.dart';
+ // import 'LoginForm.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -18,8 +18,8 @@ class MySplashState extends State<MySplash> {
   @override
   void initState() {
     Timer(Duration(seconds: 5), () {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => Login()));
+    //  Navigator.pushReplacement(
+        //  context, MaterialPageRoute(builder: (context) => Login()));
     });
   }
 
@@ -43,8 +43,9 @@ class MySplashState extends State<MySplash> {
                 height: 200,
               ),
               Text(
-                "My First App",
-                style: TextStyle(fontSize: 30, color: Colors.orangeAccent),
+                "welcome to flutter",
+                style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold
+                    , color: Colors.white),
               )
             ],
           ),
