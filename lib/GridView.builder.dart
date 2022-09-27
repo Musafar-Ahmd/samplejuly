@@ -25,12 +25,10 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   List<String> images = [
     "assets/images/apple.png",
-    "assets/images/bananas.png",
-    "assets/images/grapes.png",
     "assets/images/orange.png",
+    "assets/images/grape.png",
+    "assets/images/lemon.png",
     "assets/images/apple.png",
-    "assets/images/bananas.png",
-    "assets/images/grapes.png",
     "assets/images/orange.png",
   ];
   @override
