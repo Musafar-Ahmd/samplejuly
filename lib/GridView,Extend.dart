@@ -38,13 +38,13 @@ class _MyHomePageState extends State<MyHomePage> {
           shrinkWrap: true,
           children: [
             Container(
-              color: Colors.green,
+              color: Colors.blueAccent,
             ),
             Container(
-              color: Colors.red,
+              color: Colors.black12,
             ),
             Container(
-              color: Colors.blue,
+              color: Colors.yellow,
             ),
             Container(
               color: Colors.orange,
@@ -53,10 +53,10 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.green,
             ),
             Container(
-              color: Colors.red,
+              color: Colors.cyanAccent,
             ),
             Container(
-              color: Colors.blue,
+              color: Colors.indigo,
             ),
           ],
         )

@@ -15,19 +15,19 @@ class MyTable extends StatelessWidget {
           columns: const <DataColumn>[
             DataColumn(
               label: Text(
-                'Name',
+                'Course',
                 style: TextStyle(fontStyle: FontStyle.italic),
               ),
             ),
             DataColumn(
               label: Text(
-                'Age',
+                'Collage',
                 style: TextStyle(fontStyle: FontStyle.italic),
               ),
             ),
             DataColumn(
               label: Text(
-                'Role',
+                'Branch',
                 style: TextStyle(fontStyle: FontStyle.italic),
               ),
             ),
@@ -35,23 +35,23 @@ class MyTable extends StatelessWidget {
           rows: const <DataRow>[
             DataRow(
               cells: <DataCell>[
-                DataCell(Text('Babu')),
-                DataCell(Text('19')),
-                DataCell(Text('Student')),
+                DataCell(Text('B.TECH')),
+                DataCell(Text('MMMUT')),
+                DataCell(Text('CSE')),
               ],
             ),
             DataRow(
               cells: <DataCell>[
-                DataCell(Text('Micheal')),
-                DataCell(Text('43')),
-                DataCell(Text('Professor')),
+                DataCell(Text('B.TECH')),
+                DataCell(Text('HBTU')),
+                DataCell(Text('IT')),
               ],
             ),
             DataRow(
               cells: <DataCell>[
-                DataCell(Text('Tagore')),
-                DataCell(Text('27')),
-                DataCell(Text('Associate Professor')),
+                DataCell(Text('B.TECH')),
+                DataCell(Text('IET')),
+                DataCell(Text('ME')),
               ],
             ),
           ],

@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
             color: Colors.orange,
             child: ListTile(
                 leading: const CircleAvatar(
-                    backgroundImage: AssetImage("assets/images/businesses.png")),
+                    backgroundImage: AssetImage("assets/images/dragon.png")),
                 title: const Text("Business"),
                 trailing: Wrap(
                   spacing: 30,

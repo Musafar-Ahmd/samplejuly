@@ -4,7 +4,7 @@ import 'LoginForm.dart';
 
 void main() {
   runApp(MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.orange),
+      theme: ThemeData(primarySwatch: Colors.lightGreen),
       debugShowCheckedModeBanner: false,
       home: MySplash()));
 }
@@ -31,20 +31,20 @@ class MySplashState extends State<MySplash> {
           image: DecorationImage(
               fit: BoxFit.fill,
               image: NetworkImage(
-                  "https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v978-background-02-kpzgw7o8.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=e62663bb68a9df004c04635304ebb5f8")),
+                  "https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg")),
         ),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
               Image(
-                image: AssetImage("assets/images/businesses.png"),
+                image: AssetImage("assets/images/apple.png"),
                 width: 200,
                 height: 200,
               ),
               Text(
                 "My First App",
-                style: TextStyle(fontSize: 30, color: Colors.pink),
+                style: TextStyle(fontSize: 30, color: Colors.orangeAccent),
               )
             ],
           ),
