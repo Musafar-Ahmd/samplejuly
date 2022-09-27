@@ -1,13 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main(){
-  runApp(MaterialApp(debugShowCheckedModeBanner: false,
-    home: Login(),
-  ));
-}
 
-class Login extends StatelessWidget {
+
+class Register extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

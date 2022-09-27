@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:samplejuly/main.dart';
+import 'package:samplejuly/Register.dart';
 import 'Home.dart';
-import 'Register.dart';
 
 class Login extends StatelessWidget {
   @override
@@ -48,7 +47,7 @@ class Login extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HomePage()));
+                    MaterialPageRoute(builder: (context) => Homepage()));
               },
               // color: Colors.orange,
               child: const Text("LOGIN"),
