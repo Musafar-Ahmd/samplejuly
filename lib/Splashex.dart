@@ -44,10 +44,12 @@ class MySplashState extends State<MySplash> {
               ),
               Text(
                 "welcome to flutter",
-                style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold
-                    , color: Colors.white),
-              )
-            ],
+              style: TextStyle(fontFamily: " Alkalami-Regular.ttf "    ) ,
+              //   style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold
+              //       , color: Colors.white),
+              // )
+              )        ],
+
           ),
         ),
       ),

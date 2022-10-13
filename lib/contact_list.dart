@@ -38,7 +38,9 @@ class Homepage extends StatelessWidget {
             ),
           ),
           
-          Card( color: Colors.cyanAccent,shape:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+          Card(
+            color: Colors.cyanAccent,shape:
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
             child: ListTile(
               leading: const CircleAvatar(
                 backgroundImage: NetworkImage(

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:samplejuly/Register.dart';
 import 'Home.dart';
+void main(){
 
-class Login extends StatelessWidget {
+}
+    class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
