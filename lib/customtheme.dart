@@ -34,15 +34,18 @@ class MyApp extends StatelessWidget {
           title: 'Setting  Light/Dark Theme',
           theme: theme,
           darkTheme: dark,
-          home: const HomePage(),
+          home: const NewPage(),
+
         );
-      },
+        },
     );
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+
+class NewPage extends StatelessWidget {
+  const NewPage({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
