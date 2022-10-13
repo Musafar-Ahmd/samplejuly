@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(MaterialApp(debugShowCheckedModeBanner: false,
     home: SignupPage(),
   ));
 }
@@ -99,9 +99,11 @@ class SignupPage extends StatelessWidget {
                           onPressed: () {
                             ScaffoldMessenger.of(context).showSnackBar(snackBar);
                             // Navigator.push(
+
                             //     context, MaterialPageRoute(builder: (context) => ()));
                           },
                           color: Colors.redAccent,
+
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(40)),
                           child: const Text(

@@ -32,7 +32,7 @@ class MyTable extends StatelessWidget {
               ),
             ),
           ],
-          rows:  <DataRow>[
+          rows: const <DataRow>[
             DataRow(
               cells: <DataCell>[
                 DataCell(Text('B.TECH')),
