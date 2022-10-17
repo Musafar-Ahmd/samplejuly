@@ -15,17 +15,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AdaptiveTheme(
-      light: ThemeData(
+      light : ThemeData(
         brightness: Brightness.light,
-        primaryColor: Colors.green,
+        primarySwatch: Colors.deepOrange,
+        // primaryColor: Colors.blue,
         scaffoldBackgroundColor: Colors.white,
       ),
       dark: ThemeData(
         brightness: Brightness.dark,
-        primaryColor: Colors.red,
+        primarySwatch: Colors.yellow,
         scaffoldBackgroundColor: Colors.black,
-        iconTheme: const IconThemeData(
-          color: Colors.black,
+         iconTheme:  const IconThemeData(
+          color: Colors.white,
         ),
       ),
       initial: savedThemeMode ?? AdaptiveThemeMode.light,
@@ -45,8 +46,6 @@ class MyApp extends StatelessWidget {
 
 class NewPage extends StatelessWidget {
   const NewPage({Key? key}) : super(key: key);
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,6 +57,15 @@ class NewPage extends StatelessWidget {
         children: [
           Center(
             child: RawMaterialButton(
+              onPressed: () {
+                AdaptiveTheme.of(context).toggleThemeMode();
+              },
+
+              fillColor : Colors.green,
+              padding: const EdgeInsets.all(16),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
               child: const Text(
                 'Switch Modes',
                 style: TextStyle(
@@ -65,17 +73,10 @@ class NewPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onPressed: () {
-                AdaptiveTheme.of(context).toggleThemeMode();
-              },
-              fillColor: Colors.green,
-              padding: const EdgeInsets.all(16),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
             ),
           ),
         ],
+
       ),
     );
   }

@@ -28,8 +28,8 @@ class _BasicBottomNavBarState extends State<BasicBottomNavBar> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('BottomNavigationBar Demo'),
-        ),
+          title: Center( child : const Text('BottomNavigationBar Demo'),
+          ), ),
         body: Center(
           child: _pages.elementAt(_selectedIndex),
         ),

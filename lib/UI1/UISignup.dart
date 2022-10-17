@@ -1,294 +1,111 @@
+
 import 'package:flutter/material.dart';
+import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:samplejuly/UI1/welcome.dart';
 
-void main() {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false,
-    home: SignupPage(),
-  ));
-}
-
-class SignupPage extends StatelessWidget {
-
-
-  final snackBar = SnackBar(
-    content: const Text('Yay! A SnackBar!'),
-    action: SnackBarAction(
-      label: 'Undo',
-      onPressed: () {
-        // Some code to undo the change.
-      },
-    ),
-  );
+class UISignup extends StatelessWidget {
+  const UISignup({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: const Icon(
-              Icons.arrow_back_ios,
-              size: 20,
-              color: Colors.black,
-            )),
-      ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height,
-            width: double.infinity,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Padding(
+          padding: const EdgeInsets.only(top: 30,left: 25,right: 25),
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        const Text(
-                          "Sign up",
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                          "Create an Account,Its free",
+                Center(
+                  child: Column(
+                    children: const [
+                      Text(
+                        'Sign up',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text("Create an account. It's free",
                           style: TextStyle(
                             fontSize: 15,
-                            color: Colors.grey[700],
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 30,
-                        )
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 40),
-                      child: Column(
-                        children: [
-                          makeInput(label: "Email"),
-                          makeInput(label: "Password", obsureText: true),
-                          makeInput(label: "Confirm Pasword", obsureText: true)
-                        ],
+                          )),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Text('Username',
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                    SizedBox(height: 10,),
+                    TextField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder()
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 40),
-                      child: Container(
-                        padding: const EdgeInsets.only(top: 3, left: 3),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            border: const Border(
-                                bottom: BorderSide(color: Colors.black),
-                                top: BorderSide(color: Colors.black),
-                                right: BorderSide(color: Colors.black),
-                                left: BorderSide(color: Colors.black))),
-                        child: MaterialButton(
-                          minWidth: double.infinity,
-                          height: 60,
-                          onPressed: () {
-                            ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                            // Navigator.push(
-
-                            //     context, MaterialPageRoute(builder: (context) => ()));
-                          },
-                          color: Colors.redAccent,
-
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(40)),
-                          child: const Text(
-                            "Sign Up",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16,
-                            ),
-                          ),
-                        ),
+                    SizedBox(height: 10,),
+                    Text('Email',
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                    SizedBox(height: 10,),
+                    TextField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder()
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(height: 10,),
+                    Text('Password',
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                    SizedBox(height: 10,),
+                    TextField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder()
+                      ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text("Already have an account? "),
-                        Text(
-                          "Login",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w600, fontSize: 18),
-                        ),
-                      ],
-                    )
+                    SizedBox(height: 10,),
+                    Text('Confirm Password',
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                    SizedBox(height: 10,),
+                    TextField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder()
+                      ),
+                    ),
+
                   ],
                 ),
-              ],
-            ),
-          ),
+                const SizedBox(height: 20,),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pop(MaterialPageRoute(builder: (context)=> UIwelcome()));
+                  } ,
+                  child: Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(20),
+
+                    decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(30)
+                    ),
+                    child: const Center(child: Text('Sign Up',style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20,color: Colors.white),)),
+                  ),
+                ),
+                const SizedBox(height: 15,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text('Already have an account?',
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                    TextButton(onPressed: (){
+                      Navigator.of(context).pop();
+                    }, child: const Text('Login',style: TextStyle(color: Colors.blue,fontSize: 15),))
+                  ],)
+              ]),
         ),
       ),
     );
   }
 }
-
-Widget makeInput({label, obsureText = false}) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Text(
-        label,
-        style: const TextStyle(
-            fontSize: 15, fontWeight: FontWeight.w400, color: Colors.black87),
-      ),
-      const SizedBox(
-        height: 5,
-      ),
-      TextField(
-        obscureText: obsureText,
-        decoration: const InputDecoration(
-          contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.grey,
-            ),
-          ),
-          border:
-          OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
-        ),
-      ),
-      const SizedBox(
-        height: 30,
-      )
-    ],
-  );
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import 'package:flutter/cupertino.dart';
-// import 'package:flutter/material.dart';
-// void main(){
-//   runApp(MaterialApp(home: SignUp(),));
-// }
-//
-//
-// class SignUp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//         // appBar: AppBar(backgroundColor: Colors.blueAccent,
-//         //   title: const Text('Login',style: TextStyle(color:Colors.white,),),
-//         // ),
-//         body: Column(
-//           mainAxisAlignment: MainAxisAlignment.start,
-//           children: [
-//             const Center(
-//                 child: Text('SignUp',
-//                     style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold, color: Colors.black))),
-//             const Center(
-//               child: Text("create a account , its free",
-//               style: TextStyle(fontSize: 20,color: Colors.black),),
-//
-//             ),
-//
-//
-//             const Padding(
-//               padding: EdgeInsets.all(15.0),
-//               child: TextField(
-//                   decoration: InputDecoration(
-//
-//                       label: Text('Username'),
-//                       border: OutlineInputBorder(
-//                           borderRadius: BorderRadius.horizontal()))),
-//             ),
-//
-//             const Padding(
-//               padding: EdgeInsets.all(15.0),
-//               child: TextField(
-//                   decoration: InputDecoration(
-//
-//                       label: Text('Email'),
-//                       border: OutlineInputBorder(
-//                           borderRadius: BorderRadius.horizontal(
-//
-//                           )))),
-//             ),  const Padding(
-//               padding: EdgeInsets.all(15.0),
-//               child: TextField(
-//                   obscuringCharacter:  "*",
-//                   obscureText: true,
-//                   decoration: InputDecoration(
-//                       label: Text('Password'),
-//                       border: OutlineInputBorder(
-//                           borderRadius: BorderRadius.horizontal()))),
-//             ),
-//             const Padding(
-//               padding: EdgeInsets.all(15.0),
-//               child: TextField(
-//                   obscuringCharacter:  "*",
-//                   obscureText: true,
-//                   decoration: InputDecoration(
-//                       label: Text('Confirm Password'),
-//                       hintText: 'Enter Password',
-//                       border: OutlineInputBorder(
-//                           borderRadius: BorderRadius.horizontal()))),
-//             ),
-//
-//             SizedBox(
-//               height: 30,
-//               width: 100,
-//               child: ElevatedButton(
-//                 onPressed: () {},
-//                 // color: Colors.orange,
-//                 child: const Text("SignUP"),
-//               ),
-//             ),
-//
-//           ],
-//         )
-//     );
-//   }
-// }
