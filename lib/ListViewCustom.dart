@@ -1,82 +1,56 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main () {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false,
-      home: MyListView()));
+void main() {
+  runApp(Lstcstm());
 }
 
-class MyListView extends StatefulWidget {
-  const MyListView({super.key});
+class Lstcstm extends StatefulWidget {
 
   @override
-  State<MyListView> createState() => _MyListViewState();
+  State<StatefulWidget> createState() {
+    return Lstcstmstate();
+  }
 }
 
-class _MyListViewState extends State<MyListView> {
-  List<String> items = <String> ['2', '10', '15', '20', '25'];
-
-  void _reverse() {
-    setState(() {
-      items = items.reversed.toList();
-    });
-  }
-
+class Lstcstmstate extends State<Lstcstm> {
+  final item = List<String>.generate(10, (i) => "Item $i");
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("ListviewCustom"),),
-      body: SafeArea(
-        child: ListView.custom(
-          childrenDelegate: SliverChildBuilderDelegate(
-                  (BuildContext context, int index) {
-                return KeepAlive(
-                  data: items[index],
-                  key: ValueKey<String>(items[index]),
+    return MaterialApp(
+        home: Scaffold(
+            appBar: AppBar(title: Text('Listview Custom')),
+            body: ListView.custom(
+              childrenDelegate:
+              SliverChildBuilderDelegate((BuildContext contex, int index) {
+                return Card(
+                  color: Colors.cyanAccent,
+                  child: Padding(
+                    child: Text(item[index]),
+                    padding: EdgeInsets.all(50),
+                  ),
                 );
-              },
-              childCount: items.length,
-              findChildIndexCallback: (Key key) {
-                final ValueKey<String> valueKey = key as ValueKey<String>;
-                final String data = valueKey.value;
-                return items.indexOf(data);
-              }
-          ),
-        ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            TextButton(
-              onPressed: () => _reverse(),
-              child: const Text('Reverse items'),
-            ),
-          ],
-        ),
-      ),
-    );
+              }),
+            )));
   }
 }
 
-class KeepAlive extends StatefulWidget {
-  const KeepAlive({
-    required Key key,
-    required this.data,
-  }) : super(key: key);
 
-  final String data;
 
-  @override
-  State<KeepAlive> createState() => _KeepAliveState();
-}
 
-class _KeepAliveState extends State<KeepAlive> with AutomaticKeepAliveClientMixin{
-  @override
-  bool get wantKeepAlive => true;
 
-  @override
-  Widget build(BuildContext context) {
-    super.build(context);
-    return Text(widget.data);
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
